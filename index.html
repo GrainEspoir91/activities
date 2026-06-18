@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grain d'Espoir Essonne - Accueil</title>
+  <style>
+    :root{
+      --vert:#1f6b52;
+      --vert2:#2f8a67;
+      --or:#f2c94c;
+      --clair:#fffaf0;
+      --texte:#173b30;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f8fff9 0%, #fff8df 45%, #e8fff4 100%);
+      color:var(--texte);
+    }
+
+    header{
+      min-height: 78vh;
+      padding: 40px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:
+        radial-gradient(circle at top left, rgba(242,201,76,.35), transparent 30%),
+        linear-gradient(135deg, var(--vert), var(--vert2));
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -120px auto;
+      width:360px;
+      height:360px;
+      border-radius:50%;
+      background:rgba(242,201,76,.25);
+      filter:blur(6px);
+    }
+
+    .hero{
+      position:relative;
+      z-index:2;
+      max-width:1000px;
+    }
+
+    .logo{
+      width:150px;
+      height:150px;
+      object-fit:contain;
+      margin-bottom:22px;
+      filter: drop-shadow(0 18px 20px rgba(0,0,0,.35));
+      transform: perspective(800px) rotateY(-12deg) rotateX(8deg);
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      text-shadow:
+        1px 1px 0 #d7b33f,
+        2px 2px 0 #d7b33f,
+        3px 3px 0 #b48b20,
+        8px 12px 25px rgba(0,0,0,.45);
+    }
+
+    .slogan{
+      margin-top:18px;
+      color:var(--or);
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-style:italic;
+      font-weight:bold;
+    }
+
+    .intro{
+      max-width:860px;
+      margin:28px auto 0;
+      font-size:1.15rem;
+      line-height:1.8;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:24px;
+      padding:24px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:white;
+      box-shadow:0 6px 25px rgba(0,0,0,.08);
+      padding:14px 20px;
+      text-align:center;
+    }
+
+    nav a{
+      color:var(--vert);
+      text-decoration:none;
+      font-weight:bold;
+      margin:0 12px;
+    }
+
+    main{
+      max-width:1180px;
+      margin:auto;
+      padding:50px 18px;
+    }
+
+    .quote{
+      max-width:900px;
+      margin:0 auto 50px;
+      text-align:center;
+      font-size:clamp(1.4rem, 3vw, 2.2rem);
+      color:var(--vert);
+      font-weight:bold;
+      line-height:1.4;
+    }
+
+    .quote span{
+      display:block;
+      margin-top:15px;
+      font-size:1rem;
+      color:#6b6b6b;
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+
+    h2{
+      text-align:center;
+      color:var(--vert);
+      font-size:2.1rem;
+      margin:20px 0 30px;
+    }
+
+    .events{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:white;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 14px 35px rgba(0,0,0,.12);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 45px rgba(0,0,0,.18);
+    }
+
+    .card img{
+      width:100%;
+      height:330px;
+      object-fit:cover;
+      display:block;
+      background:#eee;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .date{
+      display:inline-block;
+      padding:7px 12px;
+      background:var(--or);
+      color:#3b3320;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:.9rem;
+      margin-bottom:10px;
+    }
+
+    .card h3{
+      margin:8px 0 8px;
+      color:var(--vert);
+      font-size:1.25rem;
+    }
+
+    .card p{
+      margin:0;
+      line-height:1.55;
+      color:#4f5f58;
+    }
+
+    .cta{
+      margin-top:55px;
+      background:linear-gradient(135deg,var(--vert),var(--vert2));
+      color:white;
+      border-radius:28px;
+      padding:35px 25px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(31,107,82,.25);
+    }
+
+    .cta h2{color:white;margin-top:0}
+
+    .cta p{
+      max-width:760px;
+      margin:auto;
+      line-height:1.7;
+      font-size:1.1rem;
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 20px;
+      background:#173b30;
+      color:white;
+    }
+
+    @media(max-width:600px){
+      .card img{height:260px}
+      nav a{display:inline-block;margin:6px 8px}
+    }
+  </style>
+</head>
+<body>
+
+  <header id="accueil">
+    <div class="hero">
+      <img class="logo" src="https://graindespoir.fr/wp-content/uploads/2024/08/cropped-LOGO-Grain-Espoir-Essonne-Simplifie-Sans-Texte.png" alt="Logo Grain d'Espoir Essonne">
+      <h1>Grain d'Espoir Essonne</h1>
+      <div class="slogan">Vivre dans l'espérance</div>
+      <div class="intro">
+        <strong>Grain d'Espoir Essonne</strong> est une association humanitaire à but non lucratif
+        qui partage l'espoir, la joie et la fraternité autour d'actions bénévoles.
+        Elle accompagne notamment les personnes âgées, les personnes fragiles et les publics
+        en besoin de soutien, sans distinction d'origine, d'âge ou de croyance.
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#evenements">Images & dates</a>
+    <a href="#mission">Notre mission</a>
+  </nav>
+
+  <main>
+    <section class="quote">
+      « Apprenez d'hier, vivez aujourd'hui, espérez pour demain »
+      <span>Albert Einstein</span>
+    </section>
+
+    <section id="evenements">
+      <h2>Nos images et dates</h2>
+
+      <div class="events">
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2025/05/Flyer-Invitation_QR-Code-724x1024.jpg" alt="Fête de la Musique 2025">
+          <div class="card-content">
+            <span class="date">21 juin 2025</span>
+            <h3>Fête de la Musique</h3>
+            <p>Concert « Les Chants de l'Espoir », entrée gratuite, organisé par Grain d'Espoir Essonne.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2025/04/218dab1a-8e4a-4aab-8725-5fe8351cad8f-1024x1024.jpg" alt="Animation du 26 avril 2025">
+          <div class="card-content">
+            <span class="date">26 avril 2025</span>
+            <h3>Animation bénévole</h3>
+            <p>Animation à la Résidence Georges Léger, maison de retraite EHPAD à Choisy-le-Roi.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2025/04/PHOTO-2025-02-14-09-22-15-1024x1024.jpg" alt="Animation du 22 février 2025">
+          <div class="card-content">
+            <span class="date">22 février 2025</span>
+            <h3>Animation bénévole</h3>
+            <p>Programme adapté aux personnes âgées et aux aide-soignants : chants, poésies, santé, jeux et cadeaux.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2024/11/Evenement-Animation-29-09-2024-avec_Koloina-1024x1024.png" alt="Animation du 24 novembre 2024">
+          <div class="card-content">
+            <span class="date">24 novembre 2024</span>
+            <h3>Animation en maison de retraite</h3>
+            <p>Rencontre bénévole à la Résidence Ondine ORPEA à Mareuil-lès-Meaux.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2024/09/Evenement-Animation-27-10-2024-FB-1024x1024.png" alt="Animation du 27 octobre 2024">
+          <div class="card-content">
+            <span class="date">27 octobre 2024</span>
+            <h3>Animation à Ballancourt</h3>
+            <p>Animation à la maison de retraite Résidence de Ballancourt, avec musique, chants, poésies et cadeaux.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2024/09/Evenement-Animation-29-09-2024-FB-1024x1024.png" alt="Animation du 29 septembre 2024">
+          <div class="card-content">
+            <span class="date">29 septembre 2024</span>
+            <h3>Animation à Choisy-le-Roi</h3>
+            <p>Animation bénévole à la Résidence Seniors Les Girandières, à Choisy-le-Roi.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://graindespoir.fr/wp-content/uploads/2024/09/Forum-des-ASSOCIATIONS-1-724x1024.png" alt="Forum des associations de Ballancourt">
+          <div class="card-content">
+            <span class="date">8 septembre 2024</span>
+            <h3>Forum des associations</h3>
+            <p>Présence au forum des associations de Ballancourt : sports, loisirs, solidarité, jeunesse, culture et art.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="cta" id="mission">
+      <h2>Notre mission</h2>
+      <p>
+        Semer l'espoir par des actions simples et concrètes : créer du lien,
+        apporter de la joie, soutenir les plus fragiles, encourager la fraternité
+        et partager des moments de paix avec les personnes de tout âge.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © Grain d'Espoir Essonne — Vivre dans l'espérance
+  </footer>
+
+</body>
+</html>
