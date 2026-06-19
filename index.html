@@ -229,6 +229,74 @@
       nav a{display:inline-block;margin:6px 8px}
     }
   </style>
+
+  <style>
+    .side-home-button {
+      position: fixed;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+      width: 92px;
+      min-height: 118px;
+      padding: 10px 8px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.94);
+      color: #1f6b52;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.24);
+      border: 2px solid #f2c94c;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .side-home-button:hover {
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.30);
+    }
+
+    .side-home-button .home-icon {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #1f6b52;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      border: 3px solid #f2c94c;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .side-home-button span {
+      display: block;
+      font-size: 0.82rem;
+      line-height: 1.1;
+    }
+
+    @media (max-width: 700px) {
+      .side-home-button {
+        left: 10px;
+        width: 76px;
+        min-height: 98px;
+        border-radius: 18px;
+      }
+
+      .side-home-button .home-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.55rem;
+      }
+
+      .side-home-button span {
+        font-size: 0.72rem;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -362,6 +430,12 @@
   <footer>
     © Grain d'Espoir Essonne — Vivre dans l'espérance
   </footer>
+
+
+  <a href="https://graindespoir.fr" class="side-home-button" aria-label="Retour à l'accueil">
+    <div class="home-icon">⌂</div>
+    <span>Accueil</span>
+  </a>
 
 </body>
 </html>
