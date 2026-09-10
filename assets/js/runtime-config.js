@@ -1,4 +1,4 @@
-window.RUNTIME_CONFIG = {
-  SUPABASE_URL: 'https://wjhlabjncezuoknudiif.supabase.co',
-  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqaGxhYmpuY2V6dW9rbnVkaWlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5MDU3NzIsImV4cCI6MjEwNDQ4MTc3Mn0.5SmCjdnSg7OugmdMfUtXCFfdu9ctVG37CCMDQDBOJPA'
+window.GRAIN_ESPOIR_CONFIG = {
+  supabaseUrl: 'https://wjhlabjncezuoknudiif.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqaGxhYmpuY2V6dW9rbnVkaWlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5MDU3NzIsImV4cCI6MjEwNDQ4MTc3Mn0.5SmCjdnSg7OugmdMfUtXCFfdu9ctVG37CCMDQDBOJPA'
 };
