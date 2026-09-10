@@ -1,0 +1,413 @@
+/* ============================================================
+   HEADER CALENDRIER
+   Même entête que la homepage Grain d'Espoir
+   ============================================================ */
+
+#accueil.calendar-site-header {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 0;
+
+  margin: 0;
+  padding: 24px 5vw 18px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.86);
+  background-image: none;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.07);
+}
+
+
+/* ============================================================
+   LIGNE PRINCIPALE
+   ============================================================ */
+
+#accueil.calendar-site-header .header-top {
+  display: grid;
+
+  grid-template-columns:
+    minmax(270px, auto)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 32px;
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   LOGO + NOM
+   ============================================================ */
+
+#accueil.calendar-site-header .brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: #123f2b;
+
+  text-decoration: none;
+}
+
+#accueil.calendar-site-header .brand:hover {
+  text-decoration: none;
+}
+
+#accueil.calendar-site-header .brand img {
+  display: block;
+
+  width: 86px;
+  height: 86px;
+
+  max-width: 86px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 8px 12px
+      rgba(0, 0, 0, 0.16)
+    );
+
+  transform:
+    perspective(700px)
+    rotateY(-8deg)
+    rotateX(5deg);
+}
+
+#accueil.calendar-site-header .brand-title {
+  margin: 0;
+
+  color: #123f2b;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.6rem,
+      3vw,
+      2.4rem
+    );
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  text-align: left;
+}
+
+
+/* ============================================================
+   CITATION
+   ============================================================ */
+
+#accueil.calendar-site-header .daily-quote {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: min(820px, 100%);
+
+  height: 126px;
+  min-height: 126px;
+
+  margin: 0 auto;
+
+  padding: 8px 28px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  opacity: 1;
+
+  filter: blur(0);
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.7s ease,
+    filter 0.7s ease,
+    transform 0.7s ease;
+}
+
+#accueil.calendar-site-header
+.daily-quote.quote-hidden {
+  opacity: 0;
+
+  filter: blur(7px);
+
+  transform: translateY(3px);
+}
+
+
+/* Texte */
+
+#accueil.calendar-site-header
+.daily-quote__content {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  min-height: 70px;
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #0d4b34;
+
+  background: none;
+
+  border: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      17px,
+      1.7vw,
+      23px
+    );
+
+  font-style: italic;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+#accueil.calendar-site-header
+.daily-quote__content::before,
+#accueil.calendar-site-header
+.daily-quote__content::after {
+  position: absolute;
+
+  color:
+    rgba(
+      55,
+      132,
+      91,
+      0.24
+    );
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 52px;
+
+  font-style: normal;
+
+  line-height: 1;
+}
+
+#accueil.calendar-site-header
+.daily-quote__content::before {
+  content: "“";
+
+  top: -4px;
+  left: -24px;
+}
+
+#accueil.calendar-site-header
+.daily-quote__content::after {
+  content: "”";
+
+  right: -24px;
+  bottom: -15px;
+}
+
+
+/* Auteur */
+
+#accueil.calendar-site-header
+.daily-quote__author {
+  min-height: 16px;
+
+  margin-top: 2px;
+
+  color: #5e786d;
+
+  font-size: 13px;
+
+  font-style: normal;
+
+  text-align: center;
+}
+
+
+/* Ornement */
+
+#accueil.calendar-site-header
+.daily-quote__ornament {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 18px;
+
+  margin-top: 3px;
+
+  color: #438a67;
+}
+
+#accueil.calendar-site-header
+.daily-quote__ornament::before,
+#accueil.calendar-site-header
+.daily-quote__ornament::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 1px;
+
+  background:
+    rgba(
+      67,
+      138,
+      103,
+      0.28
+    );
+}
+
+#accueil.calendar-site-header
+.daily-quote__leaf {
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   TABLETTE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  #accueil.calendar-site-header
+  .header-top {
+    grid-template-columns: 1fr;
+  }
+
+  #accueil.calendar-site-header
+  .brand {
+    justify-content: center;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    width: 100%;
+
+    height: 106px;
+    min-height: 106px;
+
+    padding: 8px 20px;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote__content {
+    min-height: 58px;
+
+    font-size: 17px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 620px) {
+  #accueil.calendar-site-header
+  .brand img {
+    width: 68px;
+    height: 68px;
+  }
+
+  #accueil.calendar-site-header
+  .brand-title {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #accueil.calendar-site-header
+  .daily-quote {
+    height: 96px;
+    min-height: 96px;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote__content {
+    min-height: 54px;
+
+    font-size: 16px;
+
+    line-height: 1.35;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote__content::before,
+  #accueil.calendar-site-header
+  .daily-quote__content::after {
+    display: none;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote__ornament::before,
+  #accueil.calendar-site-header
+  .daily-quote__ornament::after {
+    width: 35px;
+  }
+}
+
+
+/* ============================================================
+   ACCESSIBILITÉ
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  #accueil.calendar-site-header
+  .daily-quote {
+    transition:
+      opacity 0.2s ease;
+  }
+
+  #accueil.calendar-site-header
+  .daily-quote.quote-hidden {
+    filter: none;
+
+    transform: none;
+  }
+}
